@@ -1,10 +1,7 @@
 package com.example.thitestnanglucde002phamngoclinh.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -30,9 +27,9 @@ public class Device {
 
     private String productImage;
 
-    private Boolean isAvailable;
+    private Boolean available;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 }

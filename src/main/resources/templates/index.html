@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wallet</title>
+</head>
+<body>
+
+<h2>Danh sách ví</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Balance</th>
+    </tr>
+
+    <tr th:each="w : ${wallets}">
+        <td th:text="${w.id}"></td>
+        <td th:text="${w.balance}"></td>
+    </tr>
+</table>
+
+<h2>Chuyển tiền</h2>
+
+<form action="/transfer" method="post">
+    From ID: <input type="number" name="fromId"/><br>
+    To ID: <input type="number" name="toId"/><br>
+    Amount: <input type="number" name="amount"/><br>
+    <button type="submit">Transfer</button>
+</form>
+
+</body>
+</html>
